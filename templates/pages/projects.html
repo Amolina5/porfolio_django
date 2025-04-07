@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Projects{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/projects.css' %}">
+<!-- Projects Section -->
+<section class="projects-section">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+        <!-- GitHub Card (Far Left) -->
+        <div class="project-card social-card github-card">
+            <a href="https://github.com/YourUsername" target="_blank" rel="noopener noreferrer">
+                <div class="project-image">
+                    <img src="{% static 'img/github.png' %}" alt="GitHub Profile">
+                </div>
+                <p>Check out my GitHub repositories for source code and additional projects</p>
+                <div class="social-card-footer">
+                    <span>View GitHub Profile</span>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Real Estate -->
+        <div class="project-card">
+            <div class="project-image">
+                <img src="{% static 'img/realestate.png' %}" alt="Real Estate">
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="skills-wrapper">
+                <button class="skill-button">Skill</button>
+                <button class="skill-button">Skill</button>
+                <button class="skill-button">Skill</button>
+            </div>
+            <div class="skills-wrapper">
+                <button class="skill-button">Skill</button>
+                <button class="skill-button">Skill</button>
+                <button class="skill-button">Skill</button>
+            </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card">
+            <div class="project-image">
+                <iframe src="{% static 'img/ufc.mp4' %}" width="320" height="240"></iframe>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="skills-wrapper">
+                <button class="skill-button">Skill</button>
+                <button class="skill-button">Skill</button>
+                <button class="skill-button">Skill</button>
+            </div>
+            <div class="skills-wrapper">
+                <button class="skill-button">Skill</button>
+                <button class="skill-button">Skill</button>
+                <button class="skill-button">Skill</button>
+            </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card">
+            <div class="project-image">
+                <img src="{% static 'img/fashionpet.png' %}" alt="Project 3">
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="skills-wrapper">
+                <button class="skill-button">Skill</button>
+                <button class="skill-button">Skill</button>
+                <button class="skill-button">Skill</button>
+            </div>
+            <div class="skills-wrapper">
+                <button class="skill-button">Skill</button>
+                <button class="skill-button">Skill</button>
+                <button class="skill-button">Skill</button>
+            </div>
+        </div>
+        
+        <!-- LinkedIn Card (Far Right) -->
+        <div class="project-card social-card linkedin-card">
+            <a href="https://linkedin.com/in/YourUsername" target="_blank" rel="noopener noreferrer">
+                <div class="project-image">
+                    <img src="{% static 'img/linkedin.png' %}" alt="LinkedIn Profile">
+                </div>
+                <p>Connect with me on LinkedIn to see my professional experience and background</p>
+                <div class="social-card-footer">
+                    <span>View LinkedIn Profile</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock content %}

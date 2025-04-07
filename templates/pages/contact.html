@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block title %}Contact Me | Alex Molina{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main class="container">
+        <h1>Get In Touch</h1>
+        <div class="contact-intro">
+            <p>I'm always interested in new opportunities and collaborations. Feel free to reach out to discuss projects or just say hello!</p>
+        </div>
+
+        {% if messages %}
+        <div class="message-container">
+            {% for message in messages %}
+                <div class="message {% if message.tags %}message-{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="info-card">
+                    <h2>Contact Information</h2>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span class="icon">✉️</span>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p><a href="mailto:contact@amolina555@hotmail.com">contact@amolina555@hotmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span class="icon">📍</span>
+                        </div>
+                        <div class="info-content">
+                            <h3>Location</h3>
+                            <p>St.Louis MO</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span class="icon">🔗</span>
+                        </div>
+                        <div class="info-content">
+                            <h3>Connect</h3>
+                            <div class="social-links">
+                                <a href="https://github.com/Amolina5?tab=repositories" target="_blank">
+                                    <img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="GitHub Logo" class="social-logo">
+                                    GitHub
+                                </a>
+                                <a href="https://www.linkedin.com/in/alex-molina-007aab272/" target="_blank">
+                                    <img src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG38.png" alt="LinkedIn Logo" class="social-logo">
+                                    LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="availability-indicator">
+                        <span class="status-dot"></span>
+                        <p>Available for new opportunities</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form method="post" class="form-card">
+                    {% csrf_token %}
+                    <h2>Send a Message</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required 
+                                  placeholder="Your name" 
+                                  value="{{ form_data.name|default:'' }}">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required 
+                                  placeholder="Your email address"
+                                  value="{{ form_data.email|default:'' }}">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required 
+                              placeholder="What is this regarding?"
+                              value="{{ form_data.subject|default:'' }}">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required 
+                                 placeholder="Your message">{{ form_data.message|default:'' }}</textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">I agree to be contacted regarding my message</label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/contact.js' %}"></script>
+{% endblock %}

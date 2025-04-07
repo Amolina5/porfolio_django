@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="container flex-row justify-between align-center">
+            <div class="navbar-brand">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <main class="container">
+        <h1>Welcome to My Portfolio</h1>
+        {% block content %}{% endblock %}
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Me</h3>
+                    <p>A passionate developer focused on creating beautiful and functional web applications.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/projects/">Projects</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>S
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: amolina555@hotmail.com</p>
+                    <p>Phone: (636) 262 0829</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {% now "Y" %} My Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
