@@ -1,6 +1,15 @@
 from django.shortcuts import render
 from .forms import ContactForm
+from .models import Project
 from django.core.mail import send_mail
+
+def projects_list_view(request):
+
+    projects = Project.objects.all()
+
+    return render(request, 'pages/projects.html', {'projects': projects})
+def home_view(request):
+    return render(request, 'pages/home.html')
 
 def index(request):
     return render(request, 'base.html')

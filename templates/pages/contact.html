@@ -2,9 +2,11 @@
 {% load static %} 
 {% block title %}Contact Me | Alex Molina{% endblock %}
 
-{% block styles %}
+{% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/contact.css' %}">
-{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/utilities.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% endblock extra_css %}
 
 {% block content %}
     <main class="container">
@@ -29,27 +31,27 @@
                     <h2>Contact Information</h2>
                     <div class="info-item">
                         <div class="info-icon">
-                            <span class="icon">✉️</span>
+                            <i class="fas fa-envelope"></i>
                         </div>
                         <div class="info-content">
                             <h3>Email</h3>
-                            <p><a href="mailto:contact@amolina555@hotmail.com">contact@amolina555@hotmail.com</a></p>
+                            <p><a href="mailto:amolina555@hotmail.com">amolina555@hotmail.com</a></p>
                         </div>
                     </div>
                     
                     <div class="info-item">
                         <div class="info-icon">
-                            <span class="icon">📍</span>
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="info-content">
                             <h3>Location</h3>
-                            <p>St.Louis MO</p>
+                            <p>St. Louis, MO</p>
                         </div>
                     </div>
                     
                     <div class="info-item">
                         <div class="info-icon">
-                            <span class="icon">🔗</span>
+                            <i class="fas fa-link"></i>
                         </div>
                         <div class="info-content">
                             <h3>Connect</h3>
@@ -117,8 +119,8 @@
             </div>
         </div>
     </main>
-{% endblock %}
+{% endblock content %}
 
-{% block scripts %}
+{% block extra_js %}
     <script src="{% static 'js/contact.js' %}"></script>
-{% endblock %}
+{% endblock extra_js %}

@@ -1,0 +1,62 @@
+
+.project-card .project-image {
+    height: 220px !important; 
+    min-height: 220px !important;
+    width: 100% !important;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  
+  
+  .project-card .video-container {
+    position: relative;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .project-card .video-container video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; 
+  }
+  
+  
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .play-button i {
+    color: white;
+    font-size: 24px;
+    padding-left: 4px;
+  }
+  
+  
+  @media (min-width: 1px) {
+    .project-card .project-image {
+      height: 220px !important;
+    }
+    
+    .project-card .video-container {
+      height: 100% !important;
+    }
+  }

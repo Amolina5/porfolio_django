@@ -17,13 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from portfolio import views
-# from templates import base  # Removed as it could not be resolved
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='home'),
-    path('testing_page', views.testing_view, name='testing_page'),  
-    path('about', views.about_view, name='about'),
-    path('projects', views.project_view, name='projects'),
+    path('', views.home_view, name='home'),  # Changed to point to home_view
+    path('testing_page/', views.testing_view, name='testing_page'),  # Added trailing slash for consistency
+    path('about/', views.about_view, name='about'),  # Added trailing slash for consistency
+    path('projects/', views.projects_list_view, name='projects'),  # Use projects_list_view instead of project_view
     path('contact/', views.contact_view, name='contact'),
+    # Remove the duplicate home/ path or keep it as an alias (optional)
+    # path('home/', views.home_view, name='home_alias'),
 ]

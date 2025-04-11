@@ -2,93 +2,100 @@
 {% load static %} 
 {% block title %}About Me | Alex Molina{% endblock %}
 
-{% block styles %}
+{% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
-    <!-- Font Awesome can be added if needed -->
-    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/utilities.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% endblock extra_css %}
 
-    {% block content %}
-        <main>
-            <h1>About Me</h1>
-    <div class="profile-section">
-        <img src="{% static 'img/selfie.png' %}" alt="Alex Molina" class="profile-image">
-        <div class="social-links">
-            <a href="https://github.com/Amolina5?tab=repositories" target="_blank">
-                <img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="GitHub Logo" class="social-logo">
-                GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/alex-molina-007aab272/" target="_blank">
-                <img src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG38.png" alt="LinkedIn Logo" class="social-logo">
-                LinkedIn
-            </a>
+{% block content %}
+    <main>
+        <h1>About Me</h1>
+        
+       
+        <div class="profile-section">
+            <img src="{% static 'img/selfie.png' %}" alt="Alex Molina" class="profile-image">
+            <div class="social-links">
+                <a href="https://github.com/Amolina5?tab=repositories" target="_blank">
+                    <img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="GitHub Logo" class="social-logo">
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/alex-molina-007aab272/" target="_blank">
+                    <img src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG38.png" alt="LinkedIn Logo" class="social-logo">
+                    LinkedIn
+                </a>
+            </div>
         </div>
-    </div>
 
-    
+        
+        <div class="bio-container">
             <p>
                 Hello! I'm Alex Molina, a passionate developer with a keen eye for creating innovative and efficient web solutions.
                 My journey in technology is driven by curiosity, creativity, and a constant desire to learn and grow.
             </p>
             <p>
-                With over 5 years of experience in web development, I've worked on a diverse range of projects—from dynamic 
-                e-commerce platforms to data-driven applications that solve real-world problems. I believe in writing clean, 
-                maintainable code and creating intuitive user experiences that make technology accessible to everyone.
+                As someone just starting out in coding, I'm eager to find opportunities that allow me to learn, grow, and contribute as I develop my skills.
+                I'm passionate about building clean, intuitive user experiences and discovering ways to solve real-world problems through code.
+                While I may be at the beginning of my journey, I'm committed to honing my craft and exploring projects that align with my values of collaboration, creativity, and making technology accessible to all.
             </p>
             <p>
-                When I'm not coding, you can find me hiking local trails, experimenting with new recipes, or contributing 
-                to open-source projects that align with my values of knowledge sharing and community building.
+                When I'm not coding, you can catch me watching football games, following UFC matches, or hitting local trails for a refreshing hike.
+                Whether it's cheering for my favorite team, getting pumped for the next big fight, or soaking in the beauty of nature, I love diving into activities that fuel my energy and passion.
             </p>
-    
-            <div class="skills-section">
-                <h2>My Skills</h2>
-                <div class="skills-grid">
-                    <button class="skill-button">HTML</button>
-                    <button class="skill-button">CSS</button>
-                    <button class="skill-button">JavaScript</button>
-                    <button class="skill-button">React</button>
-                    <button class="skill-button">Node.js</button>
-                    <button class="skill-button">Python</button>
-                    <button class="skill-button">Git</button>
-                    <button class="skill-button">SQL</button>
-                    <button class="skill-button">Django</button>
-                    <button class="skill-button">Docker</button>
-                    <button class="skill-button">AWS</button>
-                    <button class="skill-button">RESTful APIs</button>
-                    <button class="skill-button">MongoDB</button>
-                    <button class="skill-button">GraphQL</button>
-                    <button class="skill-button">Tailwind CSS</button>
-                </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="skills-section">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <button class="skill-button">HTML</button>
+                <button class="skill-button">CSS</button>
+                <button class="skill-button">JavaScript</button>
+                <button class="skill-button">React</button>
+                <button class="skill-button">Node.js</button>
+                <button class="skill-button">Python</button>
+                <button class="skill-button">Git</button>
+                <button class="skill-button">SQL</button>
+                <button class="skill-button">Django</button>
+                <button class="skill-button">AWS</button>
+                <button class="skill-button">MongoDB</button>
+                <button class="skill-button">Tailwind CSS</button>
             </div>
-    
-            
-            <div class="education-section">
-                <h2>Education</h2>
-                <div class="education-item">
-                    <h3>Bootcamp in Computer Science</h3>
-                    <p class="school-date">San Diego Global knowledge University • 2025</p>
-                    <p>Graduated with honors, focusing on web technologies and software engineering principles.</p>
-                </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="education-section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Bootcamp in Computer Science</h3>
+                <p class="school-date">San Diego Global Knowledge University • 2025</p>
+                <p>Graduated with honors, focusing on web technologies and software engineering principles.</p>
             </div>
-            
-            <div class="interests-section">
-                <h2>Interests & Hobbies</h2>
-                <p>
-                    Beyond coding, I enjoy hiking, photography, reading tech blogs, attending developer meetups,
-                    and contributing to open-source projects. I'm also an avid coffee enthusiast and enjoy
-                    exploring new local coffee shops.
-                </p>
-            </div>
-            
-            <div class="contact-section">
-                <h2>Get In Touch</h2>
-                <p>
-                    Interested in working together or want to discuss a project idea? 
-                    Feel free to reach out at <a href="mailto:contact@amolina555@hotmail.com">amolina555@hotmail.com</a>.
-                </p>
-            </div>
-        </main>
-    {% endblock %}
-    
-    {% block scripts %}
-        <!-- Add JavaScript if needed -->
-    {% endblock %}
+        </div>
+        
+        
+        <div class="interests-section">
+            <h2>Interests & Hobbies</h2>
+           
+            <p>
+                Beyond coding, I enjoy hiking, photography, reading tech blogs, attending developer meetups,
+                and contributing to open-source projects. I'm also an avid coffee enthusiast and enjoy
+                exploring new local coffee shops.
+            </p>
+        </div>
+        
+        
+        <div class="contact-section">
+            <h2>Get In Touch</h2>
+            <p>
+                Interested in working together or want to discuss a project idea? 
+                Feel free to reach out at <a href="mailto:amolina555@hotmail.com">amolina555@hotmail.com</a>.
+            </p>
+            <a href="/contact" class="contact-btn">Contact Me</a>
+        </div>
+    </main>
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/about.js' %}"></script>
+{% endblock extra_js %}

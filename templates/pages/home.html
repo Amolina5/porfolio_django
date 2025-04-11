@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block title %}Alex Molina | Web Developer{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/utilities.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% endblock extra_css %}
+
+{% block content %}
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Alex Molina</h1>
+                <h2>Web Developer</h2>
+                <p>Building creative solutions with Python, Django, and JavaScript.</p>
+                <div class="hero-buttons">
+                    <a href="{% url 'projects' %}" class="btn btn-primary">View My Work</a>
+                    <a href="{% url 'contact' %}" class="btn btn-outline">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{% static 'img/selfie.png' %}" alt="Alex Molina" class="profile-pic">
+                <div class="hero-bg-element"></div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#about-preview">
+                <span>Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="about-preview" class="about-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p>A brief introduction</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">Hello! I'm Alex Molina, a passionate web developer focused on creating innovative and efficient web solutions.</p>
+                    <p>I'm enthusiastic about building clean, intuitive user experiences and solving real-world problems through code. My journey in technology is driven by curiosity, creativity, and a constant desire to learn and grow.</p>
+                    <div class="about-cta">
+                        <a href="{% url 'about' %}" class="btn btn-secondary">Learn More About Me</a>
+                    </div>
+                </div>
+                <div class="skills-preview">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" data-skill="Python">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item" data-skill="Django">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Django</span>
+                        </div>
+                        <div class="skill-item" data-skill="JavaScript">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item" data-skill="HTML/CSS">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML/CSS</span>
+                        </div>
+                        <div class="skill-item" data-skill="React">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item" data-skill="Git">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="featured-projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p>Some of my recent work</p>
+            </div>
+            <div class="projects-slider">
+               
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{% static 'img/realestate.png' %}" alt="Real Estate Website">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="/projects/real-estate" class="project-link"><i class="fas fa-link"></i></a>
+                                <a href="https://github.com/Amolina5?tab=repositories" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Real Estate Platform</h3>
+                        <p class="project-description">A full-featured real estate website with property listings, search filters, user accounts, and admin dashboard.</p>
+                        <div class="skills-wrapper">
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="video-container">
+                            <video autoplay muted loop playsinline id="ufc-video">
+                                <source src="{% static 'img/ufc.mp4' %}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">UFC Statistics Platform</h3>
+                        <p class="project-description">Interactive dashboard displaying UFC fighter statistics, match outcomes, and performance analytics.</p>
+                        <div class="skills-wrapper">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">Chart.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{% static 'img/fashionpet.png' %}" alt="Fashion Pet Store">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="/projects/fashion-pet" class="project-link"><i class="fas fa-link"></i></a>
+                                <a href="https://github.com/Amolina5?tab=repositories" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Fashion Pet E-Commerce</h3>
+                        <p class="project-description">A complete e-commerce platform for pet fashion products with shopping cart and payment processing.</p>
+                        <div class="skills-wrapper">
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Stripe API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a href="{% url 'projects' %}" class="btn btn-secondary">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Services</h2>
+                <p>What I can do for you</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Custom websites and web applications built with modern technologies and best practices.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Mobile-friendly layouts that provide an optimal viewing experience across all devices.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database Design</h3>
+                    <p>Efficient database structures and management systems to handle your data needs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>API Development</h3>
+                    <p>Custom API solutions to connect your applications and services seamlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Let's Work Together</h2>
+                <p>Have a project in mind or just want to say hello? I'd love to hear from you!</p>
+                <a href="{% url 'contact' %}" class="btn btn-primary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/home.js' %}"></script>
+{% endblock extra_js %}

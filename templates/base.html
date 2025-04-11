@@ -4,57 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} {% endblock title %}</title>
+    <meta name="description" content="Professional portfolio showcasing my web development and design projects">
+    <meta name="keywords" content="web developer, portfolio, django, full-stack, projects">
+    <meta name="author" content="Your Name">
+    
+    <title>{% block title %}Portfolio{% endblock title %} | Your Name</title>
+   
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/utilities.css' %}">
+    
+    {% block extra_css %}{% endblock extra_css %}
 </head>
 <body>
-    
-    <nav class="navbar">
-        <div class="container flex-row justify-between align-center">
-            <div class="navbar-brand">My Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <a href="/" class="navbar-brand">
+                        <span class="primary-text">Alex Molina</span> Portfolio
+                    </a>
+                    
+                    <div class="menu-toggle" id="mobile-menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    
+                    <ul class="nav-links" id="nav-links">
+                        <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+                        <li><a href="/projects" class="{% if '/projects' in request.path %}active{% endif %}">Projects</a></li>
+                        <li><a href="/about" class="{% if '/about' in request.path %}active{% endif %}">About</a></li>
+                        <li><a href="/contact" class="{% if '/contact' in request.path %}active{% endif %}">Contact</a></li>
+                        <li class="resume-btn"><a href="{% static 'resume.pdf' %}" target="_blank">Resume <i class="fas fa-download"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+>
+    <main>
+        {% block header_content %}{% endblock header_content %}
+        
+        <div class="container main-content">
+            {% block content %}{% endblock content %}
         </div>
-    </nav>
-
-    
-    <main class="container">
-        <h1>Welcome to My Portfolio</h1>
-        {% block content %}{% endblock %}
     </main>
 
-    
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-section about">
                     <h3>About Me</h3>
-                    <p>A passionate developer focused on creating beautiful and functional web applications.</p>
+                    <p>A passionate developer focused on creating beautiful and functional web applications with expertise in Django, Python, and modern frontend technologies.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/Amolina5?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/alex-molina-007aab272/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:amolina555@hotmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
-                <div class="footer-section">
+                
+                <div class="footer-section links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/projects/">Projects</a></li>
-                        <li><a href="/about/">About</a></li>
-                        <li><a href="/contact/">Contact</a></li>S
+                        <li><a href="/home">home</a></li>
+                        <li><a href="/projects">Projects</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/blog">Blog</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                
+                <div class="footer-section contact">
                     <h3>Contact</h3>
-                    <p>Email: amolina555@hotmail.com</p>
-                    <p>Phone: (636) 262 0829</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> amolina555@hotmail.com</p>
+                        <p><i class="fas fa-phone"></i> (636) 262 0829</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Your Location</p>
+                    </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; {% now "Y" %} My Portfolio. All rights reserved.</p>
+                <p>&copy; {% now "Y" %} Your Portfolio. All rights reserved.</p>
+                
+                <div class="back-to-top">
+                    <a href="#" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            this.classList.toggle('is-active');
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+        
+        
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    
+    
+    {% block extra_js %}{% endblock extra_js %}
 </body>
 </html>
